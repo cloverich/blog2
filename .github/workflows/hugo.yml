@@ -33,7 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # Changed from 0.108.0, based on `hugo version` locally
-      HUGO_VERSION: 0.111.3+extended
+      # Reports 0.111.3+extended locally
+      # Set to 0.112.5 bsed on latest version
+      HUGO_VERSION: 0.112.5
     steps:
       - name: Install Hugo CLI
         run: |
