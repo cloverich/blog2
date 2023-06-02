@@ -1,3 +1,22 @@
 baseURL = 'https://cloverich.github.io/blog2'
 languageCode = 'en-us'
 title = 'Pinecoder blog'
+
+# https://gohugo.io/getting-started/configuration-markup/#highlight
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    # Use classes, so I can override if needed
+    # hugo gen chromastyles --style=witchhazel > static/syntax.css
+    noClasses = false
+    noHl = true
+    style = 'witchhazel'
+    tabWidth = 2
