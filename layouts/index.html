@@ -5,11 +5,11 @@
         {{ with .Site.GetPage "section" "blog" }}
             <ul>
                 {{ range .Pages }}
-                <li>
-                    <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} | {{ .Title }}</a>
+                <li style="list-style-type: none">
+                  <a href="{{ .Permalink }}">{{ .Title }}</a> <small>({{ .Date.Format "2006-01-02" }})</small>
                 </li>
                 {{end}}
-            </ul>
+              </ul>
         {{ end}}
     </div>
 
