@@ -10,11 +10,11 @@ I finished another feature on [Chronicles](https://github.com/cloverich/chronicl
 
 A journal might typically have a range of topics across many days:
 
-![assets/Screen_Shot_2020-09-16_at_6.22.33_AM.png](assets/Screen_Shot_2020-09-16_at_6.22.33_AM.png "Typical journal with multiple topics")
+![assets/Screen_Shot_2020-09-16_at_6.22.33_AM.png](assets/Screen_Shot_2020-09-16_at_6.22.33_AM.png?resize=blogImages "Typical journal with multiple topics")
 
 After "Focusing" a heading, the heading element is fixed to the top, and the view filters any content not under that heading:
 
-![assets/Screen_Shot_2020-09-16_at_6.22.38_AM.png](assets/Screen_Shot_2020-09-16_at_6.22.38_AM.png "Focusing the blue heading")
+![assets/Screen_Shot_2020-09-16_at_6.22.38_AM.png](assets/Screen_Shot_2020-09-16_at_6.22.38_AM.png?resize=blogImages "Focusing the blue heading")
 
 The primary inspiration was wanting **a way to take running notes on similar topics, then have a way to surface them all in one stream** — as though the entire journal was about *just* that topic. The pattern works well for meeting notes, recurring themes, or any journal where you mix multiple topics. I most often use it to track work across multiple days (like this feature, for instance). Below i document a summary of the implementation choices and a few alternatives I may consider in the future.
 
@@ -24,7 +24,7 @@ First, there is some background information that is required, covering how docum
 
 When a journal is loaded, the app makes a (local) api search request for documents. It gets backed markdown parsed into a syntax tree ([MDAST](https://github.com/syntax-tree/mdast)). Individual `Document` components then render the markdown AST into html with [remark-html](https://github.com/remarkjs/remark-html).
 
-![assets/container-mdast.png](assets/container-mdast.png "Container component passes parsed markdown trees to multiple Document components. They use remark-html to render the parse tree into html.")
+![assets/container-mdast.png](assets/container-mdast.png?resize=blogImages "Container component passes parsed markdown trees to multiple Document components. They use remark-html to render the parse tree into html.")
 
 So to implement the feature, I wanted to:
 
@@ -112,7 +112,7 @@ I want the rendered documents to display only the content that is "under" the fo
 
 This turned out to be straight forward, as the tree structure is actually quite flat. See for example this parsed document from [astexplorer](https://astexplorer.net):
 
-![assets/Screen_Shot_2020-09-15_at_9.02.12_AM.png](assets/Screen_Shot_2020-09-15_at_9.02.12_AM.png "Parsed AST, in JSON")
+![assets/Screen_Shot_2020-09-15_at_9.02.12_AM.png](assets/Screen_Shot_2020-09-15_at_9.02.12_AM.png?resize=blogImages "Parsed AST, in JSON")
 
 Filtering out all elements between a heading of a given `depth` and the next heading, or end of the document, is then mostly just iterating over it. 
 

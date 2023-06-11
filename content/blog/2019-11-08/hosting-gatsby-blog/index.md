@@ -28,7 +28,7 @@ There are many established SSGs in widespread use. You can find one in your lang
 - the ability to generate content pages (blog posts) from text files (like markdown)
 - the ability to generate non-content pages from templates (ex: an about page)
 
-![high level overview of an ssg](./ssg-overview.png)
+![high level overview of an ssg](./ssg-overview.png?resize=blogImages)
 
 Templates are a core part of any particular SSGs identity. Most languages have at least one, and usually several templating languages suitable for generating html. Javascript has a dozen or more, but React was not traditionally considered one of them. That's because React's core abstraction is not static html generation, but components. Components have lifecycle's and state. They respond to user events and update the DOM. React's ability to [render to static markup](https://reactjs.org/docs/react-dom-server.html#rendertostaticmarkup) is just a feature.
 
@@ -59,7 +59,7 @@ gastby develop
 
 The tool scaffolds a node project and installs its dependencies. `gatsby develop` starts a development server and if you navigate to http://localhost:8000, you should see something like this:
 
-![starter blog index with some pre-filled content](./gatsby-blog-starter.png)
+![starter blog index with some pre-filled content](./gatsby-blog-starter.png?resize=blogImages)
 
 The starter is pre-populated with a bio section and some content. Its merely an example of how to populate your blog, but note that it looks quite similar to [Dan Abramov's popular blog](https://overreacted.io/). This is what makes Gatsby a great starting point: **by editing this content and some metadata you are ready to publish your site**. I'll cover how to do this next
 
@@ -106,7 +106,7 @@ module.exports = {
 
 Change title, author, description. After saving, the site will live update and should now show your name instead of Kyle's. The social section can be changed as well, but first delete it outright and save. This will produce a build error, as the `Bio` component expects this data to be present; it should display a trace in your browser:
 
-![build errors are reflected in the browser](./build-error.png)
+![build errors are reflected in the browser](./build-error.png?resize=blogImages)
 
 The error is not particularly helpful, but it does identify the component that threw the exception (`Bio.js`). Re-add the social section if you want to display your twitter handle, otherwise leave it out. 
 
@@ -394,7 +394,7 @@ At that point, your updated site is available online.
 ### getting started with Netlify
 Create an account on [Netlify](https://www.netlify.com/), then navigate to Sites > New site from Git. Follow the prompts. I add Netlify to my Github account, then give it selective access to the repo I want to publish. Notice you can configure which branch Netlify deploys -- this is one option for setting up different deployments so you can demo work before releasing it. For now I'm publishing my site as is, so I tell it to deploy from Master. It auto-detects I'm using a Gatsby project and infers the build command and directory:
 
-![I indicate which branch (master) to use. It auto-detects gatsby and pre-configures the build command to `gatsby build`](./netlify-build-setup.png)
+![I indicate which branch (master) to use. It auto-detects gatsby and pre-configures the build command to `gatsby build`](./netlify-build-setup.png?resize=blogImages)
 
 To re-iterate the above configuration: Commits to your **master** branch trigger Netlify to update and run **`gatsby build`**, and then to take the output from **`/public`** and publish the results. After saving this configuration, Netlify has enough information to host your blog at a randomly generated url (mine was `upbeat-shockley-54ce48.netlify.com`). Once its initial run completes, you can see for yourself. 
 
@@ -406,13 +406,13 @@ Next comes the domain. Netlify offers to set one up for you which is a fine rout
 
 The second case is a bit simpler, so I'll demo that next. Use the "Custom domains" section of your site in Netlify to add your custom domain, then follow its prompts. It will prompt you with something like this:
 
-![Netlify DNS prompt](./netlify-dns-config.png)
-![Netlify DNS update information](./netlify-nameservers copy.png)
+![Netlify DNS prompt](./netlify-dns-config.png?resize=blogImages)
+![Netlify DNS update information](./netlify-nameservers copy.png?resize=blogImages)
 
 In my case since I registered my domain name with [Namecheap](https://www.namecheap.com/), so I do the following: Login to Namecheap, navigate to my domain (pinecoder.dev), and find the "Nameservers" section. Change "Namecheap BasicDNS" to "Custom DNS" and add the Netlify domain servers provided above:
 
-![Select "Custom DNS" from the dropdown](./namecheap-custom-dns.png)
-![Add each Netlify DNS server from Netlify's list](./namecheap nameservers.png)
+![Select "Custom DNS" from the dropdown](./namecheap-custom-dns.png?resize=blogImages)
+![Add each Netlify DNS server from Netlify's list](./namecheap nameservers.png?resize=blogImages)
 
 Once saved it will take a bit to update, but Netlify will soon detect that your domain is using its DNS. From there, it will autoprovision https for you using [Let's Encrypt](https://letsencrypt.org/donate/). Give it some time, but you'll soon have an https enabled custom domain. 
 

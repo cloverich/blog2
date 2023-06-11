@@ -16,13 +16,13 @@ The goal is flexibility. Instead of streamlining particular views (like selected
 
 To that end, I'd always found Github's search syntax inspiring. Plain text supports many kinds of use cases using a `prefix:value` structure:
 
-![./github-search.png](./github-search.png)
+![./github-search.png](./github-search.png?resize=blogImages)
 
 Their [documentation](https://docs.github.com/en/free-pro-team@latest/github/searching-for-information-on-github/searching-issues-and-pull-requests) refers to the prefixes (`is:`, `label:`) above as *qualifiers,* but within this post and the code I refer to them as "search tags". At any rate, they support a wide variety of possible searches and modifiers (like `>` and `<` for dates). 
 
 In addition, the Github interface has many supporting features which auto add, remove, or modify text on your behalf:
 
-![./github-dropdown-example.png](./github-dropdown-example.png "The filters menu saves users from needing to remember and type various kinds of searchs")
+![./github-dropdown-example.png](./github-dropdown-example.png?resize=blogImages "The filters menu saves users from needing to remember and type various kinds of searchs")
 
  In looking for a generic search interface, I think this is a good fit. While it won't win any design awards, its a nice way to experiment with a variety of features without needing to commit to a particular design. Great for the experimental nature of this application.
 
@@ -51,7 +51,7 @@ There's several others I had in mind (including free text), but I thought this g
 
 The existing interface exposes a single dropdown menu to select the active journal
 
-![./dropdown.png](./dropdown.png "The existing, single select dropdown menu")
+![./dropdown.png](./dropdown.png?resize=blogImages "The existing, single select dropdown menu")
 
 From the UI's perspective, there is no search, just the 10 most recently created documents in the selected journal. However the backend actually interprets a selection as a search request. Selecting "chronicles" above would produce a query that looks like:
 
@@ -68,13 +68,13 @@ Despite wanting free text, I'd like to make it easy to quickly search by journal
 - Click a button to slide out a menu listing the available journals
 - Clicking a journal sets the search input to: `in:<journal name>`
 
-![./sidesheet-mockup.png](./sidesheet-mockup.png "An excalidraw mockup of the sidesheet select interface")
+![./sidesheet-mockup.png](./sidesheet-mockup.png?resize=blogImages "An excalidraw mockup of the sidesheet select interface")
 
 This is in effect still a select menu. Select menu's are of course powerful, which I believe explains their ubiquity. Less obvious until you've built interfaces for a while is how many unique interfaces can be boiled down to select menus. If I were stopping here, it would be a silly interface. But of course, the idea was to maintain the existing behavior, and provide a canvas for bigger ideas. 
 
 Once i'd decided on a starting point, the work flowed quickly. With the help of evergreen's tag input and sidebar components. Initially the tag input was read only, click sidebar to enter it. After fiddling with the UI design just a bit, I settle on the search input and two buttons (toggle sidebar, create entry).
 
-![./intag-example.png](./intag-example.png)
+![./intag-example.png](./intag-example.png?resize=blogImages)
 
 It worked well — but at this point all I had was a fancy but slightly *worse* select menu.
 

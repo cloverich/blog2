@@ -26,23 +26,23 @@ Because I think they are good examples, I include here how Github and Notions dr
 
 Github's image upload is minimal. When you drop an image onto their plain `<textarea>`, it begins the upload while adding a placeholder indicator:
 
-![Screen Shot 2021-11-03 at 11.24.20 AM.png](assets/Screen_Shot_2021-11-03_at_11.24.20_AM.png)
+![Screen Shot 2021-11-03 at 11.24.20 AM.png](assets/Screen_Shot_2021-11-03_at_11.24.20_AM.png?resize=blogImages)
 
 The file upload happens via a POST request using `multipart/form-data` encoding.
 
-![Screen Shot 2021-11-03 at 11.25.43 AM.png](assets/Screen_Shot_2021-11-03_at_11.25.43_AM.png)
+![Screen Shot 2021-11-03 at 11.25.43 AM.png](assets/Screen_Shot_2021-11-03_at_11.25.43_AM.png?resize=blogImages)
 
 Once the upload is complete, it replaces the placeholder with an `img` tag pointing to the url. The file url itself is a randomly generated ID (looks like a uuid) in place of the original filename and points to Github's CDN. There's no inline rendering of the image during or after upload, unless you click the preview tab. 
 
-![Screen Shot 2021-11-03 at 11.24.28 AM.png](assets/Screen_Shot_2021-11-03_at_11.24.28_AM.png)
+![Screen Shot 2021-11-03 at 11.24.28 AM.png](assets/Screen_Shot_2021-11-03_at_11.24.28_AM.png?resize=blogImages)
 
 Notion's is a bit fancier. It renders the image while it uploads, providing a status bar in the bottom right:
 
-![https://unsplash.com/@matthiasmullie](assets/Screen_Shot_2021-11-03_at_11.13.53_AM.png "https://unsplash.com/@matthiasmullie")
+![https://unsplash.com/@matthiasmullie](assets/Screen_Shot_2021-11-03_at_11.13.53_AM.png "https://unsplash.com/@matthiasmullie"?resize=blogImages)
 
 It appears to send it as a PUT request and get back a URL pointing to s3, which then replaces the image above.
 
-![Screen Shot 2021-11-03 at 11.16.50 AM.png](assets/Screen_Shot_2021-11-03_at_11.16.50_AM.png)
+![Screen Shot 2021-11-03 at 11.16.50 AM.png](assets/Screen_Shot_2021-11-03_at_11.16.50_AM.png?resize=blogImages)
 
 The full process is a bit more involved but beyond the scope of this document. There's some dynamic checking for which server to upload to, and it appears to do things differently if you drop multiple images. Digging in further could interesting for a future post. 
 

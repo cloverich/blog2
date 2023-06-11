@@ -20,3 +20,12 @@ title = 'Pinecoder blog'
     noHl = true
     style = 'witchhazel'
     tabWidth = 2
+
+[params]
+  [imageProcessing]
+    [resize]
+      [blogImages]
+        anchor = "center"
+        method = "fit"
+        width = 800
+        quality = 80
