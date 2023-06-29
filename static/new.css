@@ -1,6 +1,8 @@
 :root {
-	--nc-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	/* I also like https://fonts.google.com/specimen/Archivo+Narrow?query=Arch */
+	--nc-font-sans: 'Archivo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--nc-font-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
+	--nc-font-serif: 'Tinos', 'Times New Roman', serif;
 
 	/* Light theme */
 	--nc-tx-1: #000000;
@@ -91,10 +93,36 @@ html,input,select,button {
 	font-family: var(--nc-font-sans);
 }
 
+p {
+	/* font-family: var(--nc-font-serif); */
+	font-family: var(--nc-font-serif);
+	/* font-size: 20px;
+	line-height: 1.3; */
+	font-size: 21px;
+	line-height: normal;
+	/* line-height: 27px; */
+	/* -webkit-font-smoothing: antialiased; */
+	/* font-feature-settings: normal;font-kerning: auto;font-optical-sizing: auto;font-size: 21px;font-size-adjust: none;font-stretch: 100%;font-style: normal;font-variant-alternates: normal;font-variant-caps: normal;font-variant-east-asian: normal;font-variant-ligatures: normal;font-variant-numeric: normal;font-variant-position: normal;font-variation-settings: normal; */
+	color: rgba(0, 0, 0, 0.8);
+	font-kerning: normal;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+p.subtitle {
+	text-transform: uppercase;
+	font-weight: 300;
+	color: rgba(27, 26, 26, 0.8);
+	font-size: 0.87055rem; 
+	line-height: 1.625rem
+}
+
 body {
 	/* Center body in page */
 	margin: 0 auto;
-	max-width: 750px;
+	max-width: 600px;
 	padding: calc(var(--nc-bp) * 2) var(--nc-bp) 0 var(--nc-bp);
 	overflow-x: hidden;
 	word-break: break-word;
@@ -116,13 +144,18 @@ body {
 h1,h2,h3,h4,h5,h6 {
 	line-height: 1;
 	color: var(--nc-tx-1);
-	padding-top: .875rem;
+
+	/* Changed from 0.875 to 2.0 for content headings
+	probably not the best for other headings.
+	padding-top: .875rem; */
+	padding-top: 2.0rem;
 }
 
 h1,
 h2,
 h3 {
 	color: var(--nc-tx-1);
+	font-weight: 500;
 	padding-bottom: 2px;
 	margin-bottom: 8px;
 	border-bottom: 1px solid var(--nc-bg-2);

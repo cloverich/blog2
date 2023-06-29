@@ -9,19 +9,19 @@ description: "Thoughts while reading Will Larson's Staff Engineering book"
 
 This post is a review of (and thoughts about) Will Larson's [Staff Engineering](https://staffeng.com/book) book.
 
-**Introduction**
+## Introduction
 
-I've worked at a few successful startups, yet rarely one's that had proper engineering roles as such. If your tech career spawned out of IT like me,  you might lack a conceptual framework for thinking about engineering leadership. There are hero programmer's and prestige seeker's. If there is an Engineering Manager it might be someone from finance with an MBA.
+I've worked at a few successful[^1] startups, yet rarely one's that had proper engineering roles as such. If your tech career spawned out of IT like me,  you might lack a conceptual framework for thinking about engineering leadership. There are hero programmer's and prestige seeker's. If there is an Engineering Manager it might be someone from finance with an MBA.
 
 I still remember reading [Camille Fournier's The Managers Path](https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth/dp/1491973897) and it being quite revelatory to me. Ah -- this is what distinguishes those successful tech companies from the software start-ups that kind of fizzle out, or the larger ones that never transition successfully into real software companies. They simply lack leaders with a background in software engineering, the supposed backbone of their company. How could they succeed? I wouldn't appoint an engineer as CFO. But the converse is, or was, surprisingly common. 
 
 It took me much longer to come around to another kind of leadership, the one that we apparently call Staff ("plus") Engineering. I became a bit fascinated with the concept, though my understanding of it was limited. Thus when I heard about [Will Larson's upcoming book on the subject](https://staffeng.com/book), I was sure I would read it. At this point in my career I understand the general purpose of staff engineering roles and the perils of their absence. Yet, I lack a structured way for thinking about them. I'd hoped his book would give me some of the vocabulary and structure I crave. To that end it was successful.
 
-**Reflecting on my favorite parts.** 
+## Reflecting on my favorite parts
 
 The book is broken in to two parts. The first is good, and relatively short. The author surveys their own leadership career, and reviews the similarities of the people he interviewed, and then summarizes it into key concepts. That's the part I"ll focus on here. The second part is all interviews with established Staff Engineers. They aren't bad. Just low fidelity. A few nuggets and a sense of camaraderie. Nearly every book I have read would be better if it were half the length. Yet something about a 100 page book feels less legitimate. I digress.
 
-**Focus and effectiveness**
+## Focus and effectiveness
 
 A recurring theme throughout the book is ambiguity and problem selection. This definitely resonates with me. In my first Engineering Management (EM) role it became difficult for me to focus; there were so many problems to solve. I eventually realized this was quite normal for an EM, and figuring out what to work on becomes both more important and more stressful. Maybe essential stress is the right word because, unlike other stressors, this felt like part of the job. As people above you are reduced in number, so too are those who can help you figure out what to work on. I expected this was similar for a Staff Engineering role.
 
@@ -31,7 +31,7 @@ Working on the right thing is easy when it is code. But it won't always be code.
 
 See also - [Being Glue](https://noidea.dog/glue)
 
-**Building an Engineering Strategy**
+## Building an Engineering Strategy
 
 > Having a well structured plan can help substantially reduce scope while getting to most of the value
 >
@@ -45,11 +45,11 @@ See also:
 - [The Power of “Yes, if”: Iterating on our RFC Process](https://engineering.squarespace.com/blog/2019/the-power-of-yes-if)
 - [Delivering on an architecture strategy](https://blog.thepete.net/blog/2019/12/09/delivering-on-an-architecture-strategy/)
 
-**On Access to interesting work**
+## On Access to interesting work
 
 One often cited reason for why getting the Staff Engineer title is worth it is to obtain access to so called interesting work. This one is a bit funny to me. Sometimes the most important thing isn't technical at all. Sometimes it is pretty boring. Finding joy with this mindset I think has to come from being motivated by the success of the business, because in those moments where you could choose something technically interesting vs something with high impact, you basically have to choose the one with impact. The book and the interviews back this up to an extent. It is not an absolute rule, but for me it stands in relief because I don't think Staff roles and interesting work necessarily go hand in hand, as one (me, previously) might naively aspire towards. Instead I think finding interesting work should happen through a mix of job hunting and moving towards business domains that are interesting. That is to say, there is no rule that says "become staff engineer, find interesting work." I think instead a better rubric is: If you are waiting for interesting work to come to you, you might be waiting an awful long time. If interesting work is what you want most, you should go find it. Career progressing into a Staff role is perhaps best viewed as a side effect of that pursuit. Because at worse it will, just like a management position you don't want, get in your way. 
 
-**Technical Quality team**
+## Technical Quality team
 
 > Process rollout requires humans to change how they work, which you shouldn't undertake lightly.
 
@@ -59,7 +59,7 @@ For example, is it painful to write and run tests? Invest in speedier test cycle
 
 In other words, you can't put a metrics based quality program ahead of fixing obvious problems. And you likewise don't need permission or a system of metrics to implement best practices. Use your experience and judgement to decide if you can put out a few fires, or if you need to invest in a higher order decision. Having a a structured way to think about these steps helps.
 
-**A Network of peers**
+## A Network of peers
 
 The very idea of "networking" was, for a long time, both confusing and intimidating to me. Until I realized it didn't need to be anything more than keeping in touch with the people you respect and like. As easy as grabbing lunch or starting a chat with former colleagues. And putting in the effort to maintain contact. Working with great people is the best way to find and do great work. It is much simpler than I thought. 
 
@@ -71,7 +71,7 @@ Working with and supporting others becomes especially important. I have a recent
 
 How I look at it now is quite a bit different. This particular colleague was trying to affect change. In an org that needed it, who had a problem committing to technical decisions of that nature. I should have recognized I was letting perfect be the enemy of the good. Reframing it from how I can get what I think is best, to how I can empower my peers to be effective, it would have been obvious what I needed to do. Meet with them directly, then [disagree and commit](https://en.wikipedia.org/wiki/Disagree_and_commit). Provide a united front and not just agree with their decision, but support it. Help them champion it, and help them implement it. It could be as simple as working with the people that trusted me most at the company, perhaps people that weren't in their inner circle, and win a few more votes. This was an obvious win-win opportunity. And in a deep sense of irony, I myself helped push and implement JIRA at a later point, after said person had given up their quest and left for greener pastures. 
 
-**On being "in the room"**
+## On being "in the room"
 
 > If you've ever wanted to know how the sausage was made from a leadership angle, maybe consider if you actually want to know how the sausage is made. >
 > 
@@ -79,10 +79,11 @@ How I look at it now is quite a bit different. This particular colleague was try
 
 There are several sections on getting the promotion, and getting into and staying in the room. I haven't worked at a company where people were more interested in career progression than solving useful problems or working with interesting tech. While I am certain I want to work at a company that understands the value of Staff Engineering roles, the set of sections around promotion and being in the room reminded me that career growth is the primary motivation for some people. And that not everyone can get the title, and there are some hurt feelings to think of, ego's to look out for, and just more people problems that need navigated. I imagine some companies end up with Staff Engineers who do not even like to code. They might still be good at it. Yet, I struggle to think I would enjoy working at such a place. I am infatuated with the idea of staff engineering because I know what it looks like when you work with peers who, at some base level, enjoy the craft. From a prior profession, I know what it looks like to work with those who do not. I am still amazed that the intersection between interest and effectiveness is not nearly as tight as I once thought. It is good to be cognizant of what comes with the territory and recognize the trade offs you are making. I don't know if I have a point to make. I guess it just makes me think.
 
-**Is it worth the read?** 
+## Is it worth the read?
 
 Did you read this far? You should probably read the book if so. It is better written, more complete, and honestly not much longer than this reiew anyways. As far as leadership books go, it is not as good a book as [The Manager's Path](https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth/dp/1491973897) or the various other well known leadership books, a few of which I've read. But the second half not withstanding, I don't think it should have been written differently. I actually think it is well done. It covers fertile ground -- this is a niche not well covered by other leadership books.
 
 If you weren't brought up in a structured environment, yet are seeking to advance not only your own career but the craft and experience of those around you, you eventually need mentorship and guides. This book can help. It can provide a structure for thinking about career growth -- for yourself, and for others. To help you understand what you can expect of others. What you can ask of leadership. What you can ask for yourself. And also that sometimes growth and success come from asking forgiveness instead of permission, so long as you follow a few guidelines. 
 
  
+[^1]: Were they? They raised several funding rounds, hired full teams, made real products. But I'm not rich. So, jury is still out on succes. At least, they weren't totally fake.
