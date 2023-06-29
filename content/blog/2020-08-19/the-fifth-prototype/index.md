@@ -1,5 +1,5 @@
 ---
-title: Shipping something - a retrospective
+title: The Fifth Prototype
 date: "2020-08-19T00:00:00.000Z"
 description: "A brief retrospective on rebooting and shipping a basic version of my journaling application"
 tags: devlog
