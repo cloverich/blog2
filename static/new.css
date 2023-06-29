@@ -103,7 +103,7 @@ p {
 	/* line-height: 27px; */
 	/* -webkit-font-smoothing: antialiased; */
 	/* font-feature-settings: normal;font-kerning: auto;font-optical-sizing: auto;font-size: 21px;font-size-adjust: none;font-stretch: 100%;font-style: normal;font-variant-alternates: normal;font-variant-caps: normal;font-variant-east-asian: normal;font-variant-ligatures: normal;font-variant-numeric: normal;font-variant-position: normal;font-variation-settings: normal; */
-	color: rgba(0, 0, 0, 0.8);
+	color: var(--nc-tx-2);
 	font-kerning: normal;
     -moz-font-feature-settings: "kern", "liga", "clig", "calt";
     -ms-font-feature-settings: "kern", "liga", "clig", "calt";
