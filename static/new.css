@@ -517,3 +517,26 @@ div.highlight {
 	margin-right: var(--nc-codeblock-margin);
 	margin-left: var(--nc-codeblock-margin);
 }
+
+/* LANDING PAGE */
+li.landing {
+	margin: 0;
+	margin-bottom: 4px;
+	display: flex;
+	list-style-type: none;
+	align-items: baseline;
+	font-size: 0.9rem;
+}
+
+.landing > small {
+	flex-shrink: 0; /* date: don't overflow to new line */
+}
+
+.landing hr {
+	margin: 0; /* don't affect parent containers margin */
+	border: none;
+	border-top: 1px dotted grey;
+	height: 1px;
+	opacity: .25;
+	flex-grow: 1;
+}
