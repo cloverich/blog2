@@ -1,8 +1,9 @@
 <header style="margin-bottom: 24px;">
-        <a aria-current="page" href="{{ .Site.BaseURL }}"
-                style="box-shadow: none; text-decoration: none; border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; color: inherit; font-size: 1.6rem; margin-right: 1rem; font-family: monospace;">
-                PINECODER
-        </a>
-        <a href="{{ .Site.BaseURL }}about" style="font-family: monospace; margin-right: 12px;">about</a>
-
+        <div class="overlay">
+                        <a class="home" href="{{ .Site.BaseURL }}">
+                                pinecoder.dev
+                        </a>
+                        <a href="{{ .Site.BaseURL }}">posts</a>
+                        <a href="{{ .Site.BaseURL }}about">about</a>  
+        </div>
 </header>

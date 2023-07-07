@@ -15,12 +15,12 @@ In this post, I'm going to cover creating your own blog with Gatsby, a React-bas
 - [Next steps](#wrap-up)
 
 
-## motivation
+## Motivation
 Before getting to the background, lets (briefly) start with why. You could publish blog posts to [Medium](https://writingcooperative.com/a-quick-guide-to-medium-9f61864ab26), [Wordpress](https://wordpress.com/), or [Ghost](https://ghost.org/) and be up and running immediately. That's a perfectly fine route to go. Creating your own blog is something you do because you want to own your website. You want a custom domain name and control of the content. You want custom pages, or to use it as a platform for a side project. Maybe you just want something to hack on. Its more work than using one of the afformentioned blog platforms, but thanks to abundant open source tooling, only a little.
 
 This post is about getting started on that route with a site generator named Gatsby. Its a tutorial and is targeted towards developers familiar with React. There are many other Gatsby blogging tutorials out there -- this one focuses on some specific customizations I personally used. It also includes practical hosting information. If you want to follow along, you'll need [node](https://nodejs.org/en/) and [yarn](https://yarnpkg.com/en/docs/install). 
 
-## content and static site generators
+## Content and static site generators
 Of the numerous options for creating your own blog so-called static site generators (hereafter "SSG"s) hit a particular sweet spot. You author content (i.e. blog posts) in a format like markdown, then generate html documents using a build script. Templates are used to generate layouts and non-content pages. The result is a complete website - a set of html files and associated assets (images, css, fonts). Because the pages are pre-generated, there's no need to serve content directly from a database. The files are typically uploaded to a [CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) giving you cost efficient scalability. The entire process can be automated out of a Github repository, providing a nice "author - commit - publish" workflow. 
 
 There are many established SSGs in widespread use. You can find one in your language or platform of choice [here]((https://www.staticgen.com/)). They all share at least two important features:
@@ -34,7 +34,7 @@ Templates are a core part of any particular SSGs identity. Most languages have a
 
 But given React's popularity, the transition to using it as a template engine was natural and perhaps inevitable: If you already know JSX, why bother learning another templating language that does (seemingly) the same thing.  Multiple React based SSG's now exist, but many depart from traditional SSGs in an interesting way: They can re-claim a statically generated html page and turn it back into a React application, after its been loaded. There are many reasons you might do that, including pre-rendering, progressive enhancement, and [many others](https://github.com/react-static/react-static/issues/1180). There are good reasons to choose one approach over another, but I won't cover much of that here. For the purposes of this post, we'll focus on the fact that **React-based SSGs offer a familiar templating language and ecosystem to the developer already familiar with React**.
 
-## gatsby
+## Gatsby
 [Gatsby](https://www.gatsbyjs.org/) is one such React-based static site generator. I chose Gatsby as a starting point because it **provides boilerplate that includes  everything needed to run a blog out of the box**. After installing and making a few tweaks, you'll have a site that:
 
 - Looks good
@@ -133,7 +133,7 @@ We'll come back to this in a moment. Back in the component file (`Bio.js`), note
 
 For the last step, we'll modify the blog content. You'll find the existing posts in `/content/blog/` and see that each post is in its own folder. Remove all but one, and modify that last one to be your first post. ...And that's it, this site is now yours. Almost.
 
-## further customizations
+## Further customizations
 You could publish your blog right now, but for my personal site I wanted to make the following changes
 
 - customize typography
@@ -142,7 +142,7 @@ You could publish your blog right now, but for my personal site I wanted to make
 
 I'll explain how to make these changes next. I'll also explain a little more about how Gatsby works. If that's not interesting to you, [skip ahead](#hosting) to publishing.
 
-### customize typography
+### Customize typography
 Since this is a blog, typography will be the principle component of your sites design. [Typography.js](http://kyleamathews.github.io/typography.js/) is a library that helps simplify the process of configuring good typography settings by providing **pre-created typography themes and a way to easily tweak them**. This library comes pre-installed with the blog starter we've selected, so to customize your typogrphy you need only use [the website](http://kyleamathews.github.io/typography.js/) to pick a theme and settings you like, then apply them to your app. If the concept of typography feels overwhelming, check out [this guide](https://www.pierrickcalvez.com/journal/a-five-minutes-guide-to-better-typography) for a brief tutorial on how to think about this. 
 
 This starter uses the wordpress 2016 theme (at the time of this writing). You can see the associated dependencies in `package.json`:
@@ -212,7 +212,7 @@ import USWebStd from "typography-theme-us-web-design-standards"
 ```
 
 
-### adjust urls
+### Adjust urls
  By default the project is configured generate a [slug](https://yoast.com/slug/) in a simple fashion: `https://yoursite.com/slug-here`. For my site I wanted to prefix all blog posts with `/post`, and include the date of the post in the url, ex: `/post/2019-10-21/my-first-post`. I'm doing this to maintain flexibility in my sites first path (`/post` above) and I also personally like seeing the date in the URL of posts I read. 
 
 As is Gatsby is mostly copying the directory structure of your `/content` folder, so you could accomplish this by arranging your files however you want them to appear in the url. However, I'd prefer to not tie my url structure to my current folder hierarchy, and I'd like to change them independently of one another. The official Gatsby tutorial covers this:
@@ -315,7 +315,7 @@ exports.createPages = async ({ graphql, actions }) => {
 ```
 
 
-### code highlighting
+### Code highlighting
 If you plan on including code snippets in your blog, you'll probably want to add code highlighting. This is not included out of the box with the default starter, but its a simple add. We'll use [Prisma](https://prismjs.com/index.html), again mostly because there is [documented support](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/) for it. Setup involves:
 
 - Install dependencies
@@ -375,7 +375,7 @@ Lastly if you want to customize it further, simply create your own css file and 
 
 So that's it for customizations. There's myriad more plugins and customizations and as Gatsby is ultimately a React app, you could endlessly tinker and never write an actual blog post. Let's setup hosting now so that doesn't happen to you :)
 
-## hosting
+## Hosting
 At this point you can serve your site from any webhost capable of serving static files. Some options:
 
 - [Github pages](https://pages.github.com/)
@@ -391,14 +391,14 @@ Run `gatsby build` to generate the static website into the `/public` folder. You
 
 At that point, your updated site is available online.
 
-### getting started with Netlify
+### Getting started with Netlify
 Create an account on [Netlify](https://www.netlify.com/), then navigate to Sites > New site from Git. Follow the prompts. I add Netlify to my Github account, then give it selective access to the repo I want to publish. Notice you can configure which branch Netlify deploys -- this is one option for setting up different deployments so you can demo work before releasing it. For now I'm publishing my site as is, so I tell it to deploy from Master. It auto-detects I'm using a Gatsby project and infers the build command and directory:
 
 ![I indicate which branch (master) to use. It auto-detects gatsby and pre-configures the build command to `gatsby build`](./netlify-build-setup.png?resize=blogImages)
 
 To re-iterate the above configuration: Commits to your **master** branch trigger Netlify to update and run **`gatsby build`**, and then to take the output from **`/public`** and publish the results. After saving this configuration, Netlify has enough information to host your blog at a randomly generated url (mine was `upbeat-shockley-54ce48.netlify.com`). Once its initial run completes, you can see for yourself. 
 
-### configuring your domain
+### Configuring your domain
 Next comes the domain. Netlify offers to set one up for you which is a fine route to go. I happened to already have a domain name that I purchased previously. Netlify again provides prompts to help you out if you've never done something like this. The intuition is simple enough: Create DNS records so that when someone types `yourdomain.com` into their address bar, the browser resolves the domain name to the Netlify host that is serving your website. You have two options:
 
 - Setup DNS records yourself, pointing to the Netlify host that has your website
@@ -416,7 +416,7 @@ In my case since I registered my domain name with [Namecheap](https://www.namech
 
 Once saved it will take a bit to update, but Netlify will soon detect that your domain is using its DNS. From there, it will autoprovision https for you using [Let's Encrypt](https://letsencrypt.org/donate/). Give it some time, but you'll soon have an https enabled custom domain. 
 
-## wrap up
+## Wrap up
 With that, you now you have a hosted blog with a custom domain. There's much more I could have covered, but the above is plenty for getting your blog started. If you want to dig in to Gatsby a bit further, start with [their in depth tutorial](https://www.gatsbyjs.org/tutorial/). Exploring [Gatsby plugins](https://www.gatsbyjs.org/plugins/) is a good next step. 
 
 If you have feedback, <a href="mailto:chris@pinecoder.dev">reach out.</a>

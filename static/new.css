@@ -1,17 +1,18 @@
 :root {
 	/* I also like https://fonts.google.com/specimen/Archivo+Narrow?query=Arch */
-	--nc-font-sans: 'Archivo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	/* --nc-font-sans: 'Archivo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+	--nc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--nc-font-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
-	--nc-font-serif: 'Tinos', 'Times New Roman', serif;
-
+	--nc-font-serif: ui-sans-serif, system-ui, -apple-system, 'IBM Plex Serif', 'Times New Roman', serif;
+	--nc-font-headings: 'IBM Plex Sans Condensed',  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	/* Light theme */
 	--nc-tx-1: #000000;
-	--nc-tx-2: #1A1A1A;
-	--nc-bg-1: #FFFFFF;
-	--nc-bg-2: #F6F8FA;
-	--nc-bg-3: #E5E7EB;
-	--nc-lk-1: #0070F3;
-	--nc-lk-2: #0366D6;
+	--nc-tx-2: #333333;
+	--nc-bg-1: #F6F8FA;
+	--nc-bg-2: #edeff0;
+	--nc-bg-3: #d1d3d6;
+	--nc-lk-1: #1b5393;
+	--nc-lk-2: #4e2cb3;
 	--nc-lk-tx: #FFFFFF;
 	--nc-ac-1: #79FFE1;
 	--nc-ac-tx: #0C4047;
@@ -20,20 +21,22 @@
 	--nc-d-tx-1: #ffffff;
 	--nc-d-tx-2: #eeeeee;
 	--nc-d-bg-1: #000000;
-	--nc-d-bg-2: #111111;
+	--nc-d-bg-2: #14083c;
 	--nc-d-bg-3: #222222;
-	--nc-d-lk-1: #3291FF;
-	--nc-d-lk-2: #0070F3;
+	--nc-d-lk-1: #45ffe0;
+	--nc-d-lk-2: #28d3b7;;
 	--nc-d-lk-tx: #FFFFFF;
 	--nc-d-ac-1: #7928CA;
 	--nc-d-ac-tx: #FFFFFF;
 
 	/* Misc */
-	--nc-bp: 1rem; /* body padding */
-	--nc-codeblock-margin: -1rem; /* full-width code on small size */
+	--nc-bp: 1rem;
+	/* body padding */
+	--nc-codeblock-margin: -1rem;
+	/* full-width code on small size */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	:root {
 		--nc-tx-1: var(--nc-d-tx-1);
 		--nc-tx-2: var(--nc-d-tx-2);
@@ -46,7 +49,7 @@
 		--nc-ac-1: var(--nc-d-ac-1);
 		--nc-ac-tx: var(--nc--dac-tx);
 	}
-}
+} */
 
 * {
 	/* Reset margins and padding */
@@ -88,34 +91,20 @@ video {
 	margin-bottom: 1rem;
 }
 
-html,input,select,button {
+html,
+input,
+select,
+button {
 	/* Set body font family and some finicky elements */
 	font-family: var(--nc-font-sans);
-}
-
-p {
-	/* font-family: var(--nc-font-serif); */
-	font-family: var(--nc-font-serif);
-	/* font-size: 20px;
-	line-height: 1.3; */
-	font-size: 21px;
-	line-height: normal;
-	/* line-height: 27px; */
-	/* -webkit-font-smoothing: antialiased; */
-	/* font-feature-settings: normal;font-kerning: auto;font-optical-sizing: auto;font-size: 21px;font-size-adjust: none;font-stretch: 100%;font-style: normal;font-variant-alternates: normal;font-variant-caps: normal;font-variant-east-asian: normal;font-variant-ligatures: normal;font-variant-numeric: normal;font-variant-position: normal;font-variation-settings: normal; */
-	color: var(--nc-tx-2);
-	font-kerning: normal;
-    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-    font-feature-settings: "kern", "liga", "clig", "calt";
+	font-size: 18px
 }
 
 p.subtitle {
 	text-transform: uppercase;
 	font-weight: 300;
 	color: rgba(27, 26, 26, 0.8);
-	font-size: 0.87055rem; 
+	font-size: 0.87055rem;
 	line-height: 1.625rem
 }
 
@@ -131,8 +120,11 @@ body {
 
 	/* Main body text */
 	color: var(--nc-tx-2);
-	font-size: 1.03rem;
-	line-height: 1.5;
+	font-size: 1rem;
+	line-height: 130%;
+	font-family: var(--nc-font-serif);
+	-webkit-font-smoothing: antialiased;
+	/* color: var(--nc-tx-2); */
 }
 
 ::selection {
@@ -141,7 +133,12 @@ body {
 	color: var(--nc-ac-tx);
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	line-height: 1;
 	color: var(--nc-tx-1);
 
@@ -199,6 +196,10 @@ a:hover {
 	color: var(--nc-lk-2);
 }
 
+a:visited {
+	color: var(--nc-lk-2);
+}
+
 abbr:hover {
 	/* Set the '?' cursor while hovering an abbreviation */
 	cursor: help;
@@ -219,48 +220,11 @@ blockquote *:last-child {
 	margin-bottom: 0;
 }
 
-header {
-	background: var(--nc-bg-2);
-	border-bottom: 1px solid var(--nc-bg-3);
-	padding: 2rem 1.5rem;
-	
-	/* This sets the right and left margins to cancel out the body's margins. It's width is still the same, but the background stretches across the page's width. */
-
-	margin: -2rem calc(50% - 50vw) 2rem;
-
-	/* Shorthand for:
-
-	margin-top: -2rem;
-	margin-bottom: 2rem;
-
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw); */
-
-	padding-left: calc(50vw - 50%);
-	padding-right: calc(50vw - 50%);
-}
-
-header h1,
-header h2,
-header h3 {
-	padding-bottom: 0;
-	border-bottom: 0;
-}
-
-header > *:first-child {
-	margin-top: 0;
-	padding-top: 0;
-}
-
-header > *:last-child {
-	margin-bottom: 0;
-}
-
 footer {
 	background: var(--nc-bg-2);
 	border-top: 1px solid var(--nc-bg-3);
 	padding: 2rem 1.5rem;
-	
+
 	/* This sets the right and left margins to cancel out the body's margins. It's width is still the same, but the background stretches across the page's width. */
 
 	margin: 2rem calc(50% - 50vw) 0rem;
@@ -518,7 +482,52 @@ div.highlight {
 	margin-left: var(--nc-codeblock-margin);
 }
 
-/* LANDING PAGE */
+/* HEADER */
+
+header {
+	padding: 2rem 1.5rem;
+	/* This sets the right and left margins to cancel out the body's margins. It's width is still the same, but the background stretches across the page's width. */
+	margin: -2rem calc(50% - 50vw) 2rem;
+	padding-left: calc(50vw - 50%);
+	padding-right: calc(50vw - 50%);
+	font-family: var(--nc-font-headings);
+}
+
+header>nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	height: 100%;
+}
+
+
+.home {
+	box-shadow: none;
+	text-decoration: none;
+	border-bottom-width: medium;
+	border-bottom-style: none;
+	border-bottom-color: currentcolor;
+	color: inherit;
+	/* font-size: 1.3rem; */
+	font-weight: bold;
+	font-size: 1.1rem;
+	margin-right: 1rem;
+}
+
+
+header a {
+	color: var(--nc-tx-2);
+	text-decoration: none;
+	margin-right: 12px;
+}
+
+header a:visited {
+	color: var(--nc-tx-2);
+}
+
+/* HOME PAGE */
+
 li.landing {
 	margin: 0;
 	margin-bottom: 4px;
@@ -528,12 +537,14 @@ li.landing {
 	font-size: 0.9rem;
 }
 
-.landing > small {
-	flex-shrink: 0; /* date: don't overflow to new line */
+.landing>small {
+	flex-shrink: 0;
+	/* date: don't overflow to new line */
 }
 
 .landing hr {
-	margin: 0; /* don't affect parent containers margin */
+	margin: 0;
+	/* don't affect parent containers margin */
 	border: none;
 	border-top: 1px dotted grey;
 	height: 1px;
