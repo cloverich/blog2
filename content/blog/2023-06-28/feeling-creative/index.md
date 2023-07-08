@@ -8,7 +8,7 @@ description: "Struck by the creative itch while also being in a rut"
 
 I've been feeling particularly creative lately. Curious again. Yet still tired, the way parents of young children are. The way employees of busy companies are. In a prior life being in a creative mood was a time for fun. For hacking and making mistakes. Learning new things and putting them down. Putting them on the shelf, which was not yet so full as to be its own sense of anxiety.
 
-Now the past weighs on me. The idea of creating something again is exciting. And scary. What if its not good, like it usually isn't? What if I don't complete it, like I usually don't. What will I do when the creative period ends, and I have nothing to show for it. Nothing complete. Noting to be particularly proud of. 
+Now the past weighs on me. The idea of creating something again is exciting. And scary. What if its not good, like it usually isn't? What if I don't complete it, like I usually don't. What will I do when the creative period ends, and I have nothing to show for it. Nothing complete. Nothing to be particularly proud of. 
 
 And yet, being creative is who I am, I think. Hesitation, doubt, shame (of unfinished things) hold it back. But is that right? Creating anything at all makes me feel... alive. Very alive. And well. And happy. And its usually nothing at all. The simplest creation brings the most profound sense of joy and content.  
 
