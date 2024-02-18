@@ -8,6 +8,7 @@ Install Go, then:
 go install -tags extended github.com/gohugoio/hugo@latest
 
 # Run locally:
+# -D to include drafts
 hugo serve
 ```
 
