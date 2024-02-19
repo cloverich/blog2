@@ -6,14 +6,14 @@ tags: devlog
 description: "Recapping Chronicles release v0.4.0"
 ---
 
-Today I [released v0.4.0 of Chronicles](https://github.com/cloverich/chronicles/releases/tag/v0.4.0). It is the culmination of **the last six weeks of feature work**, and the first batch of work two years. 
+Today I [released v0.4.0 of Chronicles](https://github.com/cloverich/chronicles/releases/tag/v0.4.0). It is the culmination of **the last six weeks of feature work**, and the first real work in two years. 
 
 ![Github insights of the last months work](assets/github_insight_feb2024.png?resize=blogImages)
 
 The [release notes](https://github.com/cloverich/chronicles/releases/tag/v0.4.0) summarize the associated changes; here I wanted to briefly reflect on the current state of the project and future plans.
 
 # Iterating on base usability
-I called the [last release](https://github.com/cloverich/chronicles/releases/tag/v0.3.0) “Base Usability — Well kind of”. When i first broke up the hypothetical design of the app, I envisioned a base usability state. An overly simplistic but usable writing app which I could incrementally layer features on. “Well kind of” was me appreciating that **while the app is technically usable, it lacks the various note taking features I consider table stakes. Its not good enough to really use, even for basic tasks**.
+I called the [last release](https://github.com/cloverich/chronicles/releases/tag/v0.3.0) “Base Usability — Well kind of”. When I first broke up the hypothetical design of the app, I envisioned a base usability state. An overly simplistic but usable writing app which I could incrementally layer features on. “Well kind of” was me appreciating that **while the app is technically usable, it lacks the various note taking features I consider table stakes. Its not good enough to really use, even for basic tasks**.
 
 Yet, there is still benefit to making releases; to doing batches of work, marking them complete, summarizing the changes and documenting learnings. The last release closed out some long unfinished work; it was nearly two years since my last commit, as my new job in 2022 led me to put it on the shelf a while. The current release includes a fresh set of features, fixes, and improvements. The closing out of each is a mere stepping stone towards something I hope will one day be good. 
 
