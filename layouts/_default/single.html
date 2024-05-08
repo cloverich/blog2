@@ -1,11 +1,12 @@
 
 {{ define "main" }}
     <div>
-        <h1 style="margin-top: 1.625rem; margin-bottom: 0px;"> {{ .Title }}</h1>
-        <!-- <p style="font-size: 0.87055rem; line-height: 1.625rem; display: block; margin-bottom: 1.625rem;"> -->
-            <p class="subtitle">
-            {{ .Date.Format "2006-01-02" }}
+        <p class="subtitle">
+            {{ .Date.Format "Jan 02, 2006" }}
         </p>
+        <h1 class="title"> {{ .Title }}</h1>
+        <!-- <p style="font-size: 0.87055rem; line-height: 1.625rem; display: block; margin-bottom: 1.625rem;"> -->
+
     </div>
 
     {{ .Content }}

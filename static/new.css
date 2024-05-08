@@ -11,8 +11,8 @@
 	--nc-bg-1: #F6F8FA;
 	--nc-bg-2: #edeff0;
 	--nc-bg-3: #d1d3d6;
-	--nc-lk-1: #1b5393;
-	--nc-lk-2: #4e2cb3;
+	--nc-lk-1: #28292a;
+	--nc-lk-2: #000000;
 	--nc-lk-tx: #FFFFFF;
 	--nc-ac-1: #79FFE1;
 	--nc-ac-tx: #0C4047;
@@ -100,14 +100,6 @@ button {
 	font-size: 18px
 }
 
-p.subtitle {
-	text-transform: uppercase;
-	font-weight: 300;
-	color: rgba(27, 26, 26, 0.8);
-	font-size: 0.87055rem;
-	line-height: 1.625rem
-}
-
 body {
 	/* Center body in page */
 	margin: 0 auto;
@@ -146,16 +138,15 @@ h6 {
 	probably not the best for other headings.
 	padding-top: .875rem; */
 	padding-top: 2.0rem;
+	font-family: var(--nc-font-headings);
 }
 
 h1,
 h2,
 h3 {
 	color: var(--nc-tx-1);
-	font-weight: 700;
-	padding-bottom: 2px;
+	font-weight: 500;
 	margin-bottom: 8px;
-	border-bottom: 1px solid var(--nc-bg-2);
 }
 
 h4,
@@ -164,7 +155,28 @@ h6 {
 	margin-bottom: .3rem;
 }
 
+
+p.subtitle {
+	text-transform: uppercase;
+	font-weight: 300;
+	color: rgba(27, 26, 26, 0.8);
+	font-size: 0.75rem;
+	/* line-height: 1.625rem; */
+	text-align: center;
+	margin-bottom: -6px;
+	padding-bottom: 0;
+}
+
+h1.title {
+	margin-top: 0;
+	margin-bottom: 56px;
+	padding-top: 0;
+	border-bottom: none;
+	text-align: center;
+}
+
 h1 {
+	border-bottom: 1px solid var(--nc-bg-2);
 	font-size: 2.25rem;
 }
 
@@ -474,10 +486,15 @@ input {
 
 img {
 	max-width: 100%;
-	filter: grayscale(30%);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	margin-top: 8px;
+	margin-bottom: 36px;
+	filter: grayscale(50%);
 }
 
 div.highlight {
+	margin-top: 36px;
+	margin-bottom: 36px;
 	margin-right: var(--nc-codeblock-margin);
 	margin-left: var(--nc-codeblock-margin);
 }
