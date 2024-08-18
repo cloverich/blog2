@@ -1,5 +1,5 @@
 ---
-title: Ruminating on creative angst
+title: Creative angst
 date: "2023-06-28T00:00:00.000Z"
 description: "Struck by the creative itch while also being in a rut"
 ---
