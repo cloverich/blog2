@@ -4,7 +4,7 @@ date: "2026-03-01T00:00:00.000Z"
 author: Christopher Loverich
 tags: devlog
 description: "A reflection on the rapid evolution of software engineering in 2026, the rise of agentic coding, and the collective anxiety of navigating an 'upside down' development landscape."
-draft: true
+draft: false
 ---
 
 
