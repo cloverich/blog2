@@ -1,0 +1,50 @@
+[
+  {
+    "id": "original",
+    "title": "Original width",
+    "description": "The whole photograph at 600px, above the centered date and title.",
+    "number": 1
+  },
+  {
+    "id": "banner",
+    "title": "Full-width banner",
+    "description": "The shallow, edge-to-edge crop from our first iteration.",
+    "number": 2
+  },
+  {
+    "id": "split-left",
+    "title": "Photo left, title right",
+    "description": "A compact editorial spread, with the date and title beside the photograph.",
+    "number": 3
+  },
+  {
+    "id": "split-right",
+    "title": "Title left, photo right",
+    "description": "A more text-led opening, with the photo acting as a companion.",
+    "number": 4
+  },
+  {
+    "id": "title-first",
+    "title": "Title first",
+    "description": "Lead with the writing; a 720px photograph follows the title.",
+    "number": 5
+  },
+  {
+    "id": "overlap",
+    "title": "Overlapping title card",
+    "description": "A wider crop with a small title panel resting on its lower edge.",
+    "number": 6
+  },
+  {
+    "id": "small-photo",
+    "title": "Small photo, quiet title",
+    "description": "A restrained 280px photograph paired with a smaller title and date.",
+    "number": 7
+  },
+  {
+    "id": "recommended",
+    "title": "My pick: a quiet panorama",
+    "description": "A 720px \u00d7 270px crop above a left-aligned title. Enough atmosphere, then straight into the essay.",
+    "number": 8
+  }
+]

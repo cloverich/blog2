@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#5537af" />
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F6F8FA" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#17181b" media="(prefers-color-scheme: dark)">
     <title>{{ block "title" . }}
       {{ .Site.Title }}
     {{ end }}</title>
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}new.css">
+    <link rel="stylesheet" href="{{ "new.css" | relURL }}">
     <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}merriography.css"> -->
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}syntax.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,500;1,500&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     

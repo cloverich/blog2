@@ -1,15 +1,22 @@
-
 {{ define "main" }}
-    <div>
-        <p class="subtitle">
-            {{ .Date.Format "Jan 02, 2006" }}
-        </p>
-        <h1 class="title"> {{ .Title }}</h1>
-        <!-- <p style="font-size: 0.87055rem; line-height: 1.625rem; display: block; margin-bottom: 1.625rem;"> -->
-
-    </div>
-
-    {{ .Content }}
-
+    {{- $contentHash := sha256 .RawContent -}}
+    <main>
+        <article id="content-{{ substr $contentHash 0 8 }}">
+            {{- partial "post-hero.html" . -}}
+            <div class="post-heading">
+                <h1 class="title">{{ .Title }}</h1>
+                <p class="post-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
+                    {{- if eq .Section "blog" }}
+                        <span aria-hidden="true">/</span>
+                        <span>Human written</span>
+                        <span aria-hidden="true">/</span>
+                        <a class="content-hash" href="#content-{{ substr $contentHash 0 8 }}" title="Content version · SHA-256: {{ $contentHash }}" aria-label="Content version {{ substr $contentHash 0 8 }}">{{ substr $contentHash 0 8 }}</a>
+                    {{- end }}
+                </p>
+            </div>
+            {{ .Content }}
+        </article>
+    </main>
     {{- partial "footer.html" . -}}
 {{ end }}

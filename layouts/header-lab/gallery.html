@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head>{{ partial "header-lab/head.html" . }}</head>
+<body class="lab-gallery">
+{{ partial "header-lab/controls.html" . }}
+<main>
+<h1>Eight ways to open the same post.</h1>
+<p class="lab-intro">Same photograph, title, navigation, and essay. Pick a composition, then open it at full size. All options adapt to phone widths. These are local draft studies.</p>
+<div class="lab-grid">
+{{ range index .Site.Data "header-lab" }}
+<article class="lab-card">
+<a class="lab-thumbnail" href="{{ printf "header-lab/%s/" .id | relURL }}" aria-label="Open {{ .title }}">
+<iframe src="{{ printf "header-lab/%s/?embed=1" .id | relURL }}" title="Preview of {{ .title }}" tabindex="-1"></iframe>
+</a>
+<div class="lab-card-copy"><h2><a href="{{ printf "header-lab/%s/" .id | relURL }}">{{ .number }}. {{ .title }}</a></h2><p>{{ .description }}</p></div>
+</article>
+{{ end }}
+</div>
+<p class="lab-reference">Editorial references: <a href="https://craigmod.com/essays/">Craig Mod</a> and <a href="https://frankchimero.com/blog/">Frank Chimero</a>. These are original compositions for your blog, not copies.</p>
+</main>
+</body></html>

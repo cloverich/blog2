@@ -1,0 +1,9 @@
+<nav class="lab-controls" aria-label="Header comparison">
+    <a href="{{ "header-lab/" | relURL }}">← All eight</a>
+    <div class="lab-options">
+    {{ range index .Site.Data "header-lab" }}
+        <a href="{{ printf "header-lab/%s/" .id | relURL }}" title="{{ .title }}"{{ if eq $.Params.variant .id }} aria-current="page"{{ end }}>{{ .number }}</a>
+    {{ end }}
+    </div>
+    <label>Theme <select id="lab-theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
+</nav>

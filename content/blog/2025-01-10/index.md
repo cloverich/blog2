@@ -3,11 +3,11 @@ title: Reflecting on Chronicles work in 2024
 date: "2025-01-10T00:00:00.000Z"
 author: Christopher Loverich
 tags: devlog
+headerImage:
+  src: assets/9A217D87-0BE2-459D-ADBD-C3A835B7124A_1_105_c.jpeg
+  alt: A southern Oregon beach
 description: A reflection on Chronicles work in 2025, after a year of 90 tired minutes
 ---
-
-![A southern Oregon beach](assets/9A217D87-0BE2-459D-ADBD-C3A835B7124A_1_105_c.jpeg?resize=blogImages)
-
 
 Its January 2025 and about **a year since I decided to kick off [chronicles](https://github.com/cloverich/chronicles) again** as noted in [Reignition](/blog/2024-02-18/reignition/). From questioning whether it worked, to excitement in getting it running again. From briefly moving so quickly in the v0.5.0 release that I could barely stop to note it. To overwhelm and regret when midway through v0.8.0. To beginning to actually use it for real, where I noted:
 

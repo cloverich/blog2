@@ -17,39 +17,34 @@
 	--nc-ac-1: #79FFE1;
 	--nc-ac-tx: #0C4047;
 
-	/* Dark theme */
-	--nc-d-tx-1: #ffffff;
-	--nc-d-tx-2: #eeeeee;
-	--nc-d-bg-1: #000000;
-	--nc-d-bg-2: #14083c;
-	--nc-d-bg-3: #222222;
-	--nc-d-lk-1: #45ffe0;
-	--nc-d-lk-2: #28d3b7;;
-	--nc-d-lk-tx: #FFFFFF;
-	--nc-d-ac-1: #7928CA;
-	--nc-d-ac-tx: #FFFFFF;
+	--nc-code: #536580;
+	--nc-muted: #626975;
+
+	/* Native controls and scrollbars follow the same system preference. */
+	color-scheme: light dark;
 
 	/* Misc */
 	--nc-bp: 1rem;
-	/* body padding */
-	--nc-codeblock-margin: -1rem;
-	/* full-width code on small size */
+	--nc-hero-width: min(720px, calc(100vw - 2 * var(--nc-bp)));
 }
 
-/* @media (prefers-color-scheme: dark) {
+/* CSS responds to preference changes immediately, without JavaScript. */
+@media (prefers-color-scheme: dark) {
 	:root {
-		--nc-tx-1: var(--nc-d-tx-1);
-		--nc-tx-2: var(--nc-d-tx-2);
-		--nc-bg-1: var(--nc-d-bg-1);
-		--nc-bg-2: var(--nc-d-bg-2);
-		--nc-bg-3: var(--nc-d-bg-3);
-		--nc-lk-1: var(--nc-d-lk-1);
-		--nc-lk-2: var(--nc-d-lk-2);
-		--nc-lk-tx: var(--nc--dlk-tx);
-		--nc-ac-1: var(--nc-d-ac-1);
-		--nc-ac-tx: var(--nc--dac-tx);
+		--nc-tx-1: #eceff5;
+		--nc-tx-2: #c3cddd;
+		--nc-bg-1: #17181b;
+		--nc-bg-2: #1b1d21;
+		--nc-bg-3: #343b46;
+		--nc-lk-1: #c3cddd;
+		--nc-lk-2: #eceff5;
+		--nc-lk-tx: #17181b;
+		--nc-ac-1: #343b46;
+		--nc-ac-tx: #eceff5;
+		--nc-code: rgb(167, 186, 237);
+		--nc-muted: #97a3bb;
 	}
-} */
+}
 
 * {
 	/* Reset margins and padding */
@@ -156,23 +151,43 @@ h6 {
 }
 
 
-p.subtitle {
-	text-transform: uppercase;
-	font-weight: 300;
-	color: rgba(27, 26, 26, 0.8);
-	font-size: 0.75rem;
-	/* line-height: 1.625rem; */
-	text-align: center;
-	margin-bottom: -6px;
-	padding-bottom: 0;
-}
-
 h1.title {
-	margin-top: 0;
-	margin-bottom: 56px;
+	margin: 0;
 	padding-top: 0;
 	border-bottom: none;
-	text-align: center;
+	text-align: left;
+	font-size: 2rem;
+	line-height: 1.1;
+}
+
+.post-heading {
+	margin-bottom: 2.5rem;
+}
+
+.post-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.4rem;
+	margin: 0.5rem 0 0;
+	color: var(--nc-muted);
+	font-size: 0.8rem;
+	font-variant-caps: all-small-caps;
+	line-height: 1.5;
+}
+
+.content-hash,
+.content-hash:visited {
+	font-family: var(--nc-font-mono);
+	font-size: 0.7rem;
+	font-variant-caps: normal;
+	color: var(--nc-muted);
+	text-decoration: none;
+}
+
+.content-hash:hover {
+	color: var(--nc-tx-1);
+	text-decoration: underline;
 }
 
 h1 {
@@ -313,17 +328,8 @@ code,
 samp,
 kbd,
 pre {
-	/* 
-	  NOTE: I don't really like styled code text, other than using mono, so commented them out
-	  but leaving for reference
-	  The main preformatted style. This is changed slightly across different cases.
-	  background: var(--nc-bg-2);
-	  border: 1px solid var(--nc-bg-3);
-	  border-radius: 4px;
-	  padding: 3px 6px;
-	*/
-	/* ↓ font-size is relative to containing element, so it scales for titles*/
 	font-size: 0.9em;
+	color: var(--nc-code);
 }
 
 kbd {
@@ -332,9 +338,49 @@ kbd {
 }
 
 pre {
-	padding: 1rem 1.4rem;
-	max-width: 100%;
-	overflow: auto;
+	background: transparent;
+	margin-block: 2.5rem;
+	margin-inline: 0;
+	padding: 0.5rem 0;
+	/* Grow to fit code, from the prose's left edge to the right gutter. */
+	width: max-content;
+	min-width: 100%;
+	max-width: min(60rem, calc(50vw + 50% - var(--nc-bp)));
+	overflow-x: auto;
+	line-height: 1.6;
+	white-space: pre;
+	word-break: normal;
+	overflow-wrap: normal;
+	tab-size: 2;
+	/* Keep the track quiet at rest, including systems with persistent scrollbars. */
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent;
+}
+
+pre:hover,
+pre:focus-within {
+	scrollbar-color: var(--nc-muted) transparent;
+}
+
+pre:focus-visible {
+	outline: 1px solid var(--nc-bg-3);
+	outline-offset: 4px;
+}
+
+/* Fallback for Safari versions without standard scrollbar styling. */
+pre::-webkit-scrollbar {
+	height: 6px;
+}
+
+pre::-webkit-scrollbar-track,
+pre::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+
+pre:hover::-webkit-scrollbar-thumb,
+pre:focus-within::-webkit-scrollbar-thumb {
+	background: var(--nc-muted);
+	border-radius: 3px;
 }
 
 pre code {
@@ -491,11 +537,27 @@ img {
 	filter: grayscale(50%);
 }
 
-div.highlight {
-	margin-top: 36px;
-	margin-bottom: 36px;
-	margin-right: var(--nc-codeblock-margin);
-	margin-left: var(--nc-codeblock-margin);
+/* A quiet panorama above the left-aligned post title. */
+.post-hero {
+	width: var(--nc-hero-width);
+	margin: 0 calc((100% - var(--nc-hero-width)) / 2) 1.25rem;
+}
+
+.post-hero img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 8 / 3;
+	object-fit: cover;
+	margin: 0;
+	box-shadow: none;
+	filter: none;
+}
+
+/* Bring navigation closer to banners without changing ordinary posts. */
+header.has-post-hero {
+	padding-bottom: 1rem;
+	margin-bottom: 0;
 }
 
 /* HEADER */
@@ -562,7 +624,7 @@ li.landing {
 	margin: 0;
 	/* don't affect parent containers margin */
 	border: none;
-	border-top: 1px dotted grey;
+	border-top: 1px dotted var(--nc-muted);
 	height: 1px;
 	opacity: .25;
 	flex-grow: 1;

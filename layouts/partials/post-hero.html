@@ -1,0 +1,12 @@
+{{- with .Params.headerImage -}}
+    {{- $image := $.Resources.GetMatch .src -}}
+    {{- if not $image -}}
+        {{- errorf "Header image %q not found in %s" .src $.File.Path -}}
+    {{- else -}}
+        <figure class="post-hero">
+            <img src="{{ $image.RelPermalink }}" alt="{{ .alt }}"
+                 width="{{ $image.Width }}" height="{{ $image.Height }}"
+                 fetchpriority="high" decoding="async">
+        </figure>
+    {{- end -}}
+{{- end -}}

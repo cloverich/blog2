@@ -1,0 +1,9 @@
+{{ $post := .Site.GetPage "/blog/2025-01-10" }}
+{{ $image := $post.Resources.GetMatch $post.Params.headerImage.src }}
+<section class="study-hero study-hero--{{ .Params.variant }}">
+    <figure class="study-photo"><img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $post.Params.headerImage.alt }}"></figure>
+    <div class="study-title">
+        <p class="study-date">{{ $post.Date.Format "Jan 02, 2006" }}</p>
+        <h1>{{ $post.Title }}</h1>
+    </div>
+</section>

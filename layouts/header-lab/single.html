@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head>{{ partial "header-lab/head.html" . }}</head>
+<body class="lab-page">
+{{ partial "header-lab/controls.html" . }}
+{{ partial "header.html" . }}
+<main>
+{{ partial "header-lab/hero.html" . }}
+{{ with .Site.GetPage "/blog/2025-01-10" }}{{ .Content }}{{ end }}
+</main>
+{{ partial "footer.html" . }}
+</body></html>

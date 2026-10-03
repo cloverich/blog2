@@ -1,9 +1,9 @@
-<header style="margin-bottom: 24px;">
+<header{{ if .Params.headerImage }} class="has-post-hero"{{ else }} style="margin-bottom: 24px;"{{ end }}>
         <div class="overlay">
-                        <a class="home" href="{{ .Site.BaseURL }}">
+                        <a class="home" href="{{ "/" | relURL }}">
                                 pinecoder.dev
                         </a>
-                        <a href="{{ .Site.BaseURL }}">posts</a>
-                        <a href="{{ .Site.BaseURL }}about">about</a>  
+                        <a href="{{ "/" | relURL }}">posts</a>
+                        <a href="{{ "about/" | relURL }}">about</a>
         </div>
 </header>
