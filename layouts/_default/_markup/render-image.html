@@ -1,0 +1,16 @@
+{{- /* Wraps markdown images in a figure; the title (or a descriptive alt) becomes a caption. */ -}}
+{{- $src := .Destination -}}
+{{- $path := index (split $src "?") 0 -}}
+{{- $image := .Page.Resources.GetMatch (strings.TrimPrefix "./" $path) -}}
+{{- $caption := .Title -}}
+{{- if and (not $caption) (not (findRE `(?i)(\.(png|jpe?g|gif|webp)$|^screen ?shot)` .Text)) -}}
+    {{- $caption = .Text -}}
+{{- end -}}
+<figure class="post-figure">
+    <img src="{{ with $image }}{{ .RelPermalink }}{{ else }}{{ $src }}{{ end }}" alt="{{ .Text | plainify }}"
+        {{- with $image }} width="{{ .Width }}" height="{{ .Height }}"{{ end }} loading="lazy" decoding="async">
+    {{- with $caption }}
+    <figcaption>{{ . | safeHTML }}</figcaption>
+    {{- end }}
+</figure>
+{{- /* Keep a trailing newline out of the rendered output. */ -}}

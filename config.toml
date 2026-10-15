@@ -6,6 +6,10 @@ title = 'Pinecoder blog'
 [markup.highlight]
   codeFences = true
 
+# Let the image render hook emit block-level figures instead of <p><figure>.
+[markup.goldmark.parser]
+  wrapStandAloneImageWithinParagraph = false
+
 [params]
   [imageProcessing]
     [resize]
