@@ -1,7 +1,7 @@
 ---
 title: Reflecting on Chronicles work in 2024
 date: "2025-01-10T00:00:00.000Z"
-author: Christopher Loverich
+author: chris
 tags: devlog
 headerImage:
   src: assets/9A217D87-0BE2-459D-ADBD-C3A835B7124A_1_105_c.jpeg

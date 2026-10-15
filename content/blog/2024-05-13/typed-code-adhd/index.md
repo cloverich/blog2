@@ -1,7 +1,7 @@
 ---
 title: Typed code and ADHD
 date: "2024-05-13T00:00:00.000Z"
-author: Christopher Loverich
+author: chris
 tags: devlog
 description: Considering the impact of ADHD and working memory, and whether a preference for typed programming languages is more than just subjective preference.
 ---

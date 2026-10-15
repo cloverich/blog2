@@ -1,7 +1,7 @@
 ---
 title: "Python write_file utility"
 slug: python-write_file-utility
-author: Christopher Loverich
+author: chris
 date: "2020-12-30T00:00:00.000Z"
 tags: devlog
 description: "When simple functions take a bit of elbow grease"

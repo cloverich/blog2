@@ -1,7 +1,7 @@
 ---
 title: "My old job feels very distant now"
 date: "2026-10-15T00:00:00.000Z"
-author: Christopher Loverich
+author: chris
 tags: devlog
 headerImage:
   src: assets/pumpkin-rattlesnake-ledge.jpg
@@ -52,6 +52,6 @@ I want the UI to be snappy. I used to dictate using observables - and sometimes 
 
 Everything is upside down yet again. I think about the future. But I work in the present. How I work is changing again; we adapt as we must. If I forget about my fear, I instead become very excited. It can feel empowering the faster I let go of how I used to work, and instead embrace how it is now. As the code moves faster, how can I continue to understand it? I come up with new metrics, new dashboards. I think harder about the the most important parts of the design and the constraints are. That is the only place that deserves attention and effort. I think about building tools to help me understand, and tools for the model to use. Tools to iterate on ideas more quickly; to come up with new ideas, mix and match old ones. Tools to better discover what other people are doing, to think about how things my interoperate, and try to build that. 
 
-![I have Claude dump its plan, progress, and overall project notes into my notes app(s), sometimes converting them to audio and listening or reading them back on my phone](assets/claude-notes.png)
+![I have Claude dump its plan, progress, and overall project notes into my notes app(s), sometimes converting them to audio and listning or reading them back on my phone](assets/claude-notes.png)
 
 And when I come up for air, I'm amazed by how much things have changed. How quickly the models have changed. And yet, how also we have changed, and continue to adapt to the new ways of working. Many things about the old ways of working, I miss. Many things I do not. When I bring it all into relief I realize just how much what I do on a daily basis has changed. The old way of working feels like just yesterday; but also it feels to be drifting off into the distance. 

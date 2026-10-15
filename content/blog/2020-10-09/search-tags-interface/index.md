@@ -1,6 +1,6 @@
 ---
 title: "Adding a search tags interface"
-author: Christopher Loverich
+author: chris
 date: "2020-10-09T00:00:00.000Z"
 tags: chronicles, devlog
 description: "Notes on adding a search interface to chronicles"

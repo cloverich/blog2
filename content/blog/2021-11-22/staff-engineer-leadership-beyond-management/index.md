@@ -1,6 +1,6 @@
 ---
 title: "Staff Engineer: Leadership beyond the management track"
-author: Christopher Loverich
+author: chris
 date: "2021-11-22T00:00:00.000Z"
 tags: books
 description: "Thoughts while reading Will Larson's Staff Engineering book"

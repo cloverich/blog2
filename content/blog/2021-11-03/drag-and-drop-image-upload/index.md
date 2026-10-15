@@ -1,7 +1,7 @@
 ---
 title: Drag and drop image upload
 slug: "drag-and-drop-image-upload"
-author: Christopher Loverich
+author: chris
 date: "2021-11-03T00:00:00.000Z"
 tags: devlog
 description: "Notes while researching drag and drop image upload for Chronicles"

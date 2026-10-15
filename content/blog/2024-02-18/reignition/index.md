@@ -1,7 +1,7 @@
 ---
 title: Reignition
 date: "2024-02-18T00:00:00.000Z"
-author: Christopher Loverich
+author: chris
 tags: devlog
 description: "Recapping Chronicles release v0.4.0"
 ---
