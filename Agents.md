@@ -20,6 +20,6 @@ This is a personal static site built using [Hugo](https://gohugo.io/).
   - GitHub Actions automates the build and deployment process via `.github/workflows/hugo.yml`.
   - Production files are generated into `public/`.
 - **Custom Scripts**:
-  - The `scripts/` folder contains Go-based utilities for site maintenance (e.g., image resizing).
+  - `scripts/` is a Go program that shrinks post images to their display size (header images 1600px wide, body images 1200px). Run `go -C scripts run . -write` after adding images (no flag = dry run, `-check` exits 1 if anything would change). Commit the resized images, not camera/screenshot originals.
 - **Git Strategy**:
   - Direct pushes or PRs to the main branch trigger the deployment workflow.
