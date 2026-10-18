@@ -15,6 +15,16 @@ if [[ "$(git branch --show-current)" != "master" ]]; then
   exit 1
 fi
 
+# Posts from the iPhone arrive through the outbox (see scripts/outbox.sh).
+outbox="${BLOG_OUTBOX:-$HOME/Library/Mobile Documents/com~apple~CloudDocs/Chronicles Blog}"
+if [[ -d "$outbox" ]]; then
+  if $dry_run; then
+    echo "(dry run: not copying from the outbox; run scripts/outbox.sh to preview those posts)"
+  else
+    scripts/outbox.sh
+  fi
+fi
+
 changes=$(git status --porcelain --untracked-files=all -- content/blog)
 if [[ -z "$changes" ]]; then
   echo "Nothing to publish in content/blog."
