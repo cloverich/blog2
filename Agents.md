@@ -22,5 +22,6 @@ This is a personal static site built using [Hugo](https://gohugo.io/).
   - Production files are generated into `public/`.
 - **Custom Scripts**:
   - `scripts/` is a Go program that shrinks post images to their display size (header images 1600px wide, body images 1200px). Run `go -C scripts run . -write` after adding images (no flag = dry run, `-check` exits 1 if anything would change). Commit the resized images, not camera/screenshot originals.
+  - `scripts/publish.sh` puts posts that Chronicles wrote into `content/blog` live: resizes images, commits, pushes `master`. `--dry-run` only lists them. Chronicles posts carry `chronicles: {id, revision}` in front matter; that is how Chronicles knows a post is published and whether the note changed since (spec: `chronicles/spec/publish.md`). Hand edits to those posts are overwritten by the next publish from Chronicles.
 - **Git Strategy**:
   - Direct pushes or PRs to the `master` branch trigger the deployment workflow (there is no `main`).
