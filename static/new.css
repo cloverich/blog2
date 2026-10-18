@@ -246,25 +246,91 @@ blockquote *:last-child {
 	margin-bottom: 0;
 }
 
-footer {
-	background: var(--nc-bg-2);
-	border-top: 1px solid var(--nc-bg-3);
-	padding: 2rem 1.5rem;
+/* Footer. Full bleed (the margins cancel the body's), no box of its own:
+   on posts, a landscape rises behind it from the bottom. The landscape is an
+   alpha mask painted in the link colour, so it follows light and dark mode.
+   Plates have a fixed CSS size and are cropped by the screen, never scaled,
+   placed like background-position (left: X%; translateX(-X%)). Sizes and X
+   come from static/footer/recipe.json (made in the Horizon Plate lab). */
+.site-footer {
+	position: relative;
+	isolation: isolate;
+	overflow: clip;
+	margin: 4rem calc(50% - 50vw) 0;
+	padding: 2rem calc(50vw - 50%) 2rem;
+	text-align: center;
+}
 
-	/* This sets the right and left margins to cancel out the body's margins. It's width is still the same, but the background stretches across the page's width. */
+.site-footer p {
+	margin: 0;
+}
 
-	margin: 2rem calc(50% - 50vw) 0rem;
+.footer-cta {
+	font-size: 1.25rem;
+}
 
-	/* Shorthand for:
+.footer-legal {
+	margin-top: 0.5rem !important;
+	font-size: 0.85rem;
+	color: var(--nc-muted);
+}
 
-	margin-top: -2rem;
-	margin-bottom: 2rem;
+.footer-credit {
+	margin-top: 0.25rem !important;
+	font-size: 0.75rem;
+	color: var(--nc-muted);
+	opacity: 0.8;
+}
 
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw); */
+/* Narrow plate (820 × 600, X 50%) below 820 px; wide (2400 × 1000, X 61%)
+   from there up. The text sits above the image (overlap 0), so the footer is
+   the plate's height of padding below the text. Browsers fetch only the mask
+   that applies; content-visibility keeps all of it out of first paint. */
+.site-footer.has-plate {
+	padding-bottom: 600px;
+	content-visibility: auto;
+	contain-intrinsic-size: auto 760px;
+}
 
-	padding-left: calc(50vw - 50%);
-	padding-right: calc(50vw - 50%);
+.site-footer.has-plate::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+	width: 820px;
+	height: 600px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: var(--nc-lk-1);
+	mask: url(footer/plate-narrow.png) 0 0 / 100% 100% no-repeat;
+	pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	.site-footer.has-plate::before {
+		mask-image: url(footer/plate-narrow-dark.png);
+	}
+}
+
+@media (min-width: 820px) {
+	.site-footer.has-plate {
+		padding-bottom: 1000px;
+		contain-intrinsic-size: auto 1160px;
+	}
+
+	.site-footer.has-plate::before {
+		width: 2400px;
+		height: 1000px;
+		left: 61%;
+		transform: translateX(-61%);
+		mask-image: url(footer/plate-wide.png);
+	}
+}
+
+@media (min-width: 820px) and (prefers-color-scheme: dark) {
+	.site-footer.has-plate::before {
+		mask-image: url(footer/plate-wide-dark.png);
+	}
 }
 
 a button,

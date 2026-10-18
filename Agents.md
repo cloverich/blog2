@@ -13,6 +13,7 @@ This is a personal static site built using [Hugo](https://gohugo.io/).
 - **Layouts & Styling**:
   - Custom HTML templates in `layouts/`.
   - Global CSS files in `static/` (e.g., `new.css`, `syntax.css`, `typography_blog1.css`).
+  - Post footer (`layouts/partials/footer.html`, `.site-footer` in `new.css`): on blog posts a landscape rises behind it, four alpha masks in `static/footer/` made in the Horizon Plate lab (cloverich/artifacts). See `static/footer/README.md` to change the image.
 - **Assets**: 
   - Post-specific assets (like images) are typically placed in an `assets/` subfolder within the post's directory.
   - Global static files (e.g., icons, favicon) in `static/`.
