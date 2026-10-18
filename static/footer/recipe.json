@@ -10,7 +10,7 @@
  "inkLight": false,
  "lift": 0.1,
  "fade": 0.3,
- "sides": 0,
+ "sides": 0.15,
  "contrast": 1.1,
  "gamma": 1.1,
  "bits": "auto",

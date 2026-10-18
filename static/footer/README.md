@@ -13,7 +13,19 @@ The post footer's landscape is four alpha masks made in the Horizon Plate lab
 Source: `watched_and_acceptance.png`, a dream of the author's, drawn by them and
 rendered as a painting by Gemini. The source is not committed.
 
-To change it: load the source in the lab, paste `recipe.json` onto the page, tune,
-Copy recipe, and re-export (or have an agent render the four files headless from
-the recipe and source). Plate geometry lives in the `.site-footer` rules in
-`static/new.css`; keep their sizes and positions in sync with the recipe.
+To change it:
+
+1. Open the lab (https://cloverich.github.io/artifacts/, Horizon Plate), drop in
+   the source, and paste `recipe.json` onto the page to restore these settings.
+2. Tune, then **Copy recipe** and replace `recipe.json` with it.
+3. Re-render all four files from a checkout of cloverich/artifacts:
+
+   ```sh
+   node horizon-plate/build.mjs
+   node horizon-plate/render.mjs <source> ../blog2/static/footer/recipe.json ../blog2/static/footer --dark
+   ```
+
+   (Or hand an agent the recipe and the source image; never exported PNGs
+   through chat, which re-encodes them.)
+4. If you changed a plate's width, height, or Position X, update the matching
+   values in `.site-footer` in `static/new.css` (Copy CSS in the lab shows them).
