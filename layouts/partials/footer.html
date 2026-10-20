@@ -1,9 +1,11 @@
 {{- /* Posts get the dream landscape; other pages get the plain footer. Geometry
        and masks: .site-footer.has-plate in new.css, assets in static/footer/. */ -}}
 <footer class="site-footer{{ if eq .Section "blog" }} has-plate{{ end }}">
-    <p class="footer-cta">Thoughts? <a href="mailto:chris@pinecoder.dev">Drop me a line</a>.</p>
-    <p class="footer-legal">© {{ now.Year }} Pinecoder</p>
+    <div class="footer-row">
+        <p>Thoughts? <a href="mailto:chris@pinecoder.dev">Drop me a line</a>.</p>
+        <p>© {{ now.Year }} Pinecoder</p>
+    </div>
     {{- if eq .Section "blog" }}
-    <p class="footer-credit">The image is a dream I had: drawn by me, then rendered in this style by Gemini.</p>
+    <p class="footer-credit"><a href="/footer/acceptance_dream.jpg">A dream I had: drawn by me, then rendered in this style by Gemini.</a></p>
     {{- end }}
 </footer>

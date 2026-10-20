@@ -1,40 +1,41 @@
 {
  "horizonPlate": 1,
- "source": "watched_and_acceptance.png",
+ "source": "acceptance_dream.jpg",
  "theme": "pineLight",
  "algo": "inkmap",
  "field": "wave",
  "hatch": true,
- "angle": 44,
+ "angle": 45,
  "kernel": "atkinson",
  "inkLight": false,
  "lift": 0.1,
  "fade": 0.3,
- "sides": 0.15,
+ "sides": 0.06,
+ "edge": "glitch",
  "contrast": 1.1,
  "gamma": 1.1,
  "bits": "auto",
  "format": "png",
  "bg": "#f6f8fa",
  "ink": "#28292a",
+ "credit": "",
  "size": 0,
  "plates": {
   "wide": {
    "width": 2400,
-   "height": 1000,
-   "overlap": 0,
-   "ax": 0.61,
-   "ay": 0.64,
-   "zoom": 0.55
-  },
-  "narrow": {
-   "width": 820,
-   "height": 600,
+   "height": 870,
    "overlap": 0,
    "ax": 0.5,
+   "ay": 0.25,
+   "zoom": 1
+  },
+  "narrow": {
+   "width": 1640,
+   "height": 920,
+   "overlap": 0,
+   "ax": 0.455,
    "ay": 0,
-   "zoom": 0.5
+   "zoom": 1.2
   }
- },
- "credit": "The image is a dream I had: drawn by me, then rendered in this style by Gemini."
+ }
 }

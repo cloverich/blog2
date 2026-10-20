@@ -249,47 +249,72 @@ blockquote *:last-child {
 /* Footer. Full bleed (the margins cancel the body's), no box of its own:
    on posts, a landscape rises behind it from the bottom. The landscape is an
    alpha mask painted in the link colour, so it follows light and dark mode.
-   Plates have a fixed CSS size and are cropped by the screen, never scaled,
-   placed like background-position (left: X%; translateX(-X%)). Sizes and X
-   come from static/footer/recipe.json (made in the Horizon Plate lab). */
+   Masks and framing come from static/footer/recipe.json (Horizon Plate). */
 .site-footer {
 	position: relative;
 	isolation: isolate;
 	overflow: clip;
 	margin: 4rem calc(50% - 50vw) 0;
 	padding: 2rem calc(50vw - 50%) 2rem;
-	text-align: center;
+	font-size: 0.85rem;
+	color: var(--nc-muted);
 }
 
 .site-footer p {
 	margin: 0;
 }
 
-.footer-cta {
-	font-size: 1.25rem;
+.footer-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.25rem 1.5rem;
 }
 
-.footer-legal {
-	margin-top: 0.5rem !important;
-	font-size: 0.85rem;
-	color: var(--nc-muted);
+.footer-row a {
+	color: inherit;
 }
 
+/* The painting's credit, for whoever looks closely: tucked into the plate's
+   bottom corner, over the cliff (heavy ink in light mode, bare in dark). */
 .footer-credit {
-	margin-top: 0.25rem !important;
-	font-size: 0.75rem;
-	color: var(--nc-muted);
-	opacity: 0.8;
+	position: absolute;
+	right: 1rem;
+	bottom: 0.6rem;
+	max-width: 12rem;
+	font-size: 0.65rem;
+	line-height: 1.4;
+	text-align: right;
+	opacity: 0.55;
 }
 
-/* Narrow plate (820 × 600, X 50%) below 820 px; wide (2400 × 1000, X 61%)
-   from there up. The text sits above the image (overlap 0), so the footer is
-   the plate's height of padding below the text. Browsers fetch only the mask
-   that applies; content-visibility keeps all of it out of first paint. */
+.footer-credit a {
+	color: var(--nc-bg-1);
+	text-decoration: none;
+}
+
+.footer-credit a:hover {
+	text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+	.footer-credit a {
+		color: var(--nc-muted);
+	}
+}
+
+/* The plate scales with the screen and runs edge to edge. Its sides tear
+   into the page (recipe "sides" 6%, "edge" glitch), but each plate is drawn
+   wide enough that the tear sits just off screen; it shows only on screens
+   past 2560 px, where the plate stops growing. Narrow (820 × 460 CSS, X 45.5%, keeps the eye and
+   the figure on a phone) below 820 px; wide (2400 × 870, X 50%) from there
+   up. Browsers fetch only the mask that applies; content-visibility keeps
+   all of it out of first paint. */
 .site-footer.has-plate {
-	padding-bottom: 600px;
+	--plate-w: max(820px, 100vw / 0.8);
+	padding-bottom: calc(var(--plate-w) * 460 / 820);
 	content-visibility: auto;
-	contain-intrinsic-size: auto 760px;
+	contain-intrinsic-size: auto 560px;
 }
 
 .site-footer.has-plate::before {
@@ -297,10 +322,10 @@ blockquote *:last-child {
 	position: absolute;
 	bottom: 0;
 	z-index: -1;
-	width: 820px;
-	height: 600px;
-	left: 50%;
-	transform: translateX(-50%);
+	width: var(--plate-w);
+	aspect-ratio: 820 / 460;
+	left: 45.5%;
+	transform: translateX(-45.5%);
 	background: var(--nc-lk-1);
 	mask: url(footer/plate-narrow.png) 0 0 / 100% 100% no-repeat;
 	pointer-events: none;
@@ -314,15 +339,15 @@ blockquote *:last-child {
 
 @media (min-width: 820px) {
 	.site-footer.has-plate {
-		padding-bottom: 1000px;
-		contain-intrinsic-size: auto 1160px;
+		--plate-w: calc(clamp(1400px, 100vw, 2560px) / 0.88);
+		padding-bottom: calc(var(--plate-w) * 870 / 2400);
+		contain-intrinsic-size: auto 900px;
 	}
 
 	.site-footer.has-plate::before {
-		width: 2400px;
-		height: 1000px;
-		left: 61%;
-		transform: translateX(-61%);
+		aspect-ratio: 2400 / 870;
+		left: 50%;
+		transform: translateX(-50%);
 		mask-image: url(footer/plate-wide.png);
 	}
 }

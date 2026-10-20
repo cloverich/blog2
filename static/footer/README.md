@@ -8,10 +8,14 @@ The post footer's landscape is four alpha masks made in the Horizon Plate lab
 - `plate-wide-dark.png`, `plate-narrow-dark.png`: dark mode, the same recipe with
   `"inkLight": true`, so light ink paints the light areas (a print, not a negative).
 - The narrow pair is used below 820 px, the wide pair from there up. Each visitor
-  downloads one file.
+  downloads one file. Plates scale with the screen (see `.site-footer` in
+  `static/new.css`); their sides tear into the page (`"edge": "glitch"`), drawn
+  just off screen until the wide plate stops growing past 2560 px.
+- The narrow recipe plate is 1640 × 920 so its PNG is 2× density; CSS shows it at
+  820 × 460.
 
-Source: `watched_and_acceptance.png`, a dream of the author's, drawn by them and
-rendered as a painting by Gemini. The source is not committed.
+Source: `acceptance_dream.jpg`, a dream of the author's, drawn by them and
+rendered as a painting by Gemini. The footer credit links to it.
 
 To change it:
 
@@ -22,10 +26,11 @@ To change it:
 
    ```sh
    node horizon-plate/build.mjs
-   node horizon-plate/render.mjs <source> ../blog2/static/footer/recipe.json ../blog2/static/footer --dark
+   node horizon-plate/render.mjs ../pinecoder.dev/static/footer/acceptance_dream.jpg ../pinecoder.dev/static/footer/recipe.json ../pinecoder.dev/static/footer --dark
    ```
 
    (Or hand an agent the recipe and the source image; never exported PNGs
    through chat, which re-encodes them.)
-4. If you changed a plate's width, height, or Position X, update the matching
-   values in `.site-footer` in `static/new.css` (Copy CSS in the lab shows them).
+4. If you changed a plate's aspect ratio or Position X, update the matching
+   values in `.site-footer` in `static/new.css`. The lab's Copy CSS assumes
+   fixed-size plates, so don't paste it over the scaling rules.
