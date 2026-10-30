@@ -1,0 +1,16 @@
+{{- $posts := where .Site.RegularPages "Section" "blog" -}}
+<table>
+    <thead><tr><th scope="col">Authorship</th><th scope="col">Posts</th></tr></thead>
+    <tbody>
+        {{- range .Site.Data.authorship }}
+            {{- $id := .id }}
+            {{- $count := 0 }}
+            {{- range $posts }}
+                {{- if eq (.Params.authorship | default "human-written") $id }}
+                    {{- $count = add $count 1 }}
+                {{- end }}
+            {{- end }}
+        <tr><th scope="row"><a href="#{{ .id }}">{{ .label }}</a></th><td>{{ $count }}</td></tr>
+        {{- end }}
+    </tbody>
+</table>

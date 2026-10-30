@@ -1,4 +1,6 @@
 ---
+writing_quality: muted
+authorship: ai-assisted
 title: Typed code and ADHD
 date: "2024-05-13T00:00:00.000Z"
 author: chris

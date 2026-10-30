@@ -9,7 +9,12 @@
                     <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
                     {{- if eq .Section "blog" }}
                         <span aria-hidden="true">/</span>
-                        <span>Human written</span>
+                        {{- $authorship := .Params.authorship | default "human-written" }}
+                        {{- range .Site.Data.authorship }}
+                            {{- if eq .id $authorship }}
+                        <a href="{{ "authorship/" | relURL }}#{{ .id }}">{{ .label }}</a>
+                            {{- end }}
+                        {{- end }}
                         <span aria-hidden="true">/</span>
                         <a class="content-hash" href="#content-{{ substr $contentHash 0 8 }}" title="Content version · SHA-256: {{ $contentHash }}" aria-label="Content version {{ substr $contentHash 0 8 }}">{{ substr $contentHash 0 8 }}</a>
                     {{- end }}

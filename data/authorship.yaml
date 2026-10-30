@@ -1,0 +1,8 @@
+- id: human-written
+  label: Human written
+- id: ai-assisted
+  label: AI assisted
+- id: human-edited
+  label: Human edited
+- id: ai-written
+  label: AI written
