@@ -1,4 +1,5 @@
 ---
+writing_quality: muted
 title: Setting up a Gatsby blog
 date: "2019-11-08T00:00:00.000Z"
 description: "An up and running guide to setting up, customizing, and hosting a blog using a static site generator"

@@ -741,3 +741,12 @@ li.landing {
 	opacity: .25;
 	flex-grow: 1;
 }
+/* A quiet personal preference, without changing the index layout. */
+.landing.writing-muted > a {
+	color: var(--nc-muted);
+}
+
+.landing.writing-muted > a:hover,
+.landing.writing-muted > a:focus-visible {
+	color: var(--nc-lk-2);
+}

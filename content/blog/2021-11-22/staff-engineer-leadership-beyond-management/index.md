@@ -1,4 +1,5 @@
 ---
+writing_quality: muted
 title: "Staff Engineer: Leadership beyond the management track"
 author: chris
 date: "2021-11-22T00:00:00.000Z"

@@ -5,7 +5,7 @@
         {{ with .Site.GetPage "section" "blog" }}
             <ul style="padding-left: 0">
                 {{ range .Pages }}
-                <li class="landing">
+                <li class="landing{{ if eq .Params.writing_quality "muted" }} writing-muted{{ end }}">
                   <a href="{{ .Permalink }}" style="text-overflow: ellipsis;">{{ .Title }}</a> 
                   <hr />
                   <small>{{ .Date.Format "2006-01-02" }}</small>
